@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Company from './Company';
 
 var masterCompanyList = [
@@ -41,6 +42,7 @@ function CompanyList(){
         contact={company.contact}
         key={index}/>
         )}
+        <Link to="/newticket">Create Ticket</Link>
     </div>
   );
 }
