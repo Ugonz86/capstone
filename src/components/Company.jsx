@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import Moment from 'moment';
 
 function Company(props){
   return (
@@ -9,10 +10,15 @@ function Company(props){
   );
 }
 
+// function displayTimeAdded(timeAdded) {
+//     return timeAdded.from(new Moment(), true);
+//   }
+
 Company.propTypes = {
   name: PropTypes.string.isRequired,
   utility: PropTypes.string.isRequired,
-  contact: PropTypes.string.isRequired
+  contact: PropTypes.string.isRequired,
+//   timeAdded: PropTypes.instanceOf(Moment).isRequired
 };
 
 export default Company;

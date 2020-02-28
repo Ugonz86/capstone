@@ -1,50 +1,66 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Company from './Company';
+import PropTypes from 'prop-types';
+// import Moment from 'moment';
 
 var masterCompanyList = [
-    {
-        Name="Seattle Light",
-        Utility="Electricity",
-        Contact="www.seattle.com"
-    },
-    {
-        Name="Seattle Water",
-        Utility="Water",
-        Contact="www.seattle.com"
-    },
-    {
-        Name="Seattle Farm",
-        Utility="Insurance",
-        Contact="www.seattle.com"
-    },
-    {
-        Name="Seattle Auto",
-        Utility="Car Dealer",
-        Contact="www.seattle.com"
-    },
-    {
-        Name="Seattle Fi",
-        Utility="Internet",
-        Contact="www.seattle.com"
-    },
+  {
+    name:'Seattle Light',
+    utility:'Electricity',
+    contact:'www.seattle.com',
+    timeAdded:''
+  },
+  {
+    name:'Seattle Water',
+    utility:'Water',
+    contact:'www.seattle.com',
+    timeAdded:''
+  },
+  {
+    name:'Seattle Farm',
+    utility:'Insurance',
+    contact:'www.seattle.com',
+    timeAdded:''
+  },
+  {
+    name:'Seattle Auto',
+    utility:'Car Dealer',
+    contact:'www.seattle.com',
+    timeAdded:''
+  },
+  {
+    name:'Seattle Fi',
+    utility:'Internet',
+    contact:'www.seattle.com',
+    timeAdded:''
+  },
     
 ];
 
-function CompanyList(){
+// function displayTimeAdded(timeAdded) {
+//     return timeAdded.from(new Moment(), true);
+//   }
+
+function CompanyList(props){
   return (
     <div>
-        <hr/>
-        {masterCompanyList.map((company, index) =>
+      <hr/>
+      {props.companyList.map((company) =>
         <Company
-        name={company.name}
-        utility={company.utility}
-        contact={company.contact}
-        key={index}/>
-        )}
-        <Link to="/newticket">Create Ticket</Link>
+          name={company.name}
+          utility={company.utility}
+          contact={company.contact}
+          timeAdded={company.timeAdded}
+          key={company.id}/>
+      )}
+      <Link to='/newticket'>Create Ticket</Link>
     </div>
   );
 }
+
+CompanyList.propTypes = {
+  companyList: PropTypes.array,
+};
 
 export default CompanyList;
