@@ -5,8 +5,8 @@ import Header from './Header';
 function App(){
   return (
     <div>
-    <Header/>
-    <CompanyList/>
+      <Header/>
+      <CompanyList/>
     </div>
   );
 }
