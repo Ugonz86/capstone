@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./components/App";
 
 ReactDOM.render(
-  <div>
-    <h1>ebills</h1>
-    <p><em>Firebase will not save record!</em></p>
-  </div>,
+  <App/>,
   document.getElementById('capstone')
 );
