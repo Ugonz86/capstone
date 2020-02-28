@@ -1,5 +1,5 @@
-import React from "react";
-import Company from "./Company";
+import React from 'react';
+import Company from './Company';
 
 function CompanyList(){
   return (

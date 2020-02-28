@@ -1,6 +1,6 @@
-import React from "react";
-import CompanyList from "./CompanyList";
-import Header from "./Header";
+import React from 'react';
+import CompanyList from './CompanyList';
+import Header from './Header';
 
 function App(){
   return (
