@@ -73,8 +73,8 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
         template:'template.ejs',
-        appMountId: 'react-app-root',
-        title: 'React Help Queue',
+        appMountId: 'capstone',
+        title: 'My Capstone',
         filename: resolve(__dirname, "build", "index.html"),
       }),
   ]
