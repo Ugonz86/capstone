@@ -1,14 +1,18 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
+var homeStyle = {
+  textAlign: 'center'
+};
+
 function Home(){
   return (
-    <div>
+    <div style={homeStyle}>
       {/* <nav>
         <Link to="/companyList">Company List</Link>
       </nav> */}
      
-      <h1>hello!</h1>
+      <h1>insert content here!</h1>
       
     </div>
   );

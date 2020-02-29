@@ -5,15 +5,55 @@ import NewCompanyControl from './NewCompanyControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Moment from 'moment';
+import Account from './Account';
+// import Moment from 'moment';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
+
+    const newMasterCompanyList = {};
+
+    let newCompanyId = v4();
+    newMasterCompanyList[newCompanyId] = {
+      name:'Seattle Light',
+      utility:'Electricity',
+      contact:'www.seattle.com',
+      timeAdded:''
+    };
+    newCompanyId = v4();
+    newMasterCompanyList[newCompanyId] = {
+      name:'Seattle Water',
+      utility:'Water',
+      contact:'www.seattle.com',
+      timeAdded:''
+    };
+    newCompanyId = v4();
+    newMasterCompanyList[newCompanyId] = {
+      name:'Seattle Farm',
+      utility:'Insurance',
+      contact:'www.seattle.com',
+      timeAdded:''
+    };
+    newCompanyId = v4();
+    newMasterCompanyList[newCompanyId] = {
+      name:'Seattle Auto',
+      utility:'Car Dealer',
+      contact:'www.seattle.com',
+      timeAdded:''
+    };
+    newCompanyId = v4();
+    newMasterCompanyList[newCompanyId] = {
+      name:'Seattle Fi',
+      utility:'Internet',
+      contact:'www.seattle.com',
+      timeAdded:''
+    };
+
     this.state = {
-      masterCompanyList: [],
+      masterCompanyList: newMasterCompanyList,
       selectedCompany: null
     };
     this.handleAddingNewCompanyToList = this.handleAddingNewCompanyToList.bind(this);
@@ -58,9 +98,9 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route path='/Account' component={Account} />
           <Route path='/NewCompany' render={()=><NewCompanyControl onNewCompanyCreation={this.handleAddingNewCompanyToList} />} />
-         
-          <Route path='/companyList' render={()=><CompanyList companyList={this.state.masterCompanyList} onCompanySelection={this.handleChangingSelectedCompany}
+          <Route path='/CompanyList' render={()=><CompanyList companyList={this.state.masterCompanyList} onCompanySelection={this.handleChangingSelectedCompany}
             selectedCompany={this.state.selectedCompany}/>} />
           <Route component={Error404} />
         </Switch>
